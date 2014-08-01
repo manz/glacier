@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="ui stackable two column grid">
+        <div class="column">
+            <h3 class="ui dividing header">Plan d'accès</h3>
+
+            <div id="map_canvas" style="height:400px"></div>
+            <script type="text/javascript"
+                    src="https://maps.googleapis.com/maps/api/js?sensor=true"></script>
+            <script type="text/javascript">
+                function initialize() {
+                    //43.355559,3.523462&spn=0.002321,0.005681
+                    var myLatlng = new google.maps.LatLng(43.355753, 3.526228);
+                    var myOptions = {
+                        zoom: 16,
+                        center: myLatlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                    };
+                    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+                    var marker = new google.maps.Marker({
+                        position: myLatlng,
+                        map: map,
+                        title: "Le Glacier"
+                    });
+                }
+                initialize();
+            </script>
+        </div>
+        <div class="column">
+            <h3 class="ui dividing header">Contact et jours ouvrés</h3>
+            <table>
+                <tr>
+                    <td></td>
+                    <td>Lundi</td>
+                    <td>Mardi</td>
+                    <td>Mercredi</td>
+                    <td>Jeudi</td>
+                    <td>Vendredi</td>
+                    <td>Samedi</td>
+                    <td>Dimanche</td>
+                </tr>
+                <tr>
+                    <td>Midi</td>
+                    <td>–</td>
+                    <td><i class="green checkmark icon"></i></td>
+                    <td><i class="green checkmark icon"></i></td>
+                    <td><i class="green checkmark icon"></i></td>
+                    <td><i class="green checkmark icon"></i></td>
+                    <td><i class="green checkmark icon"></i></td>
+                    <td><i class="green checkmark icon"></i></td>
+                </tr>
+                <tr>
+                    <td>Soir</td>
+                    <td>–</td>
+                    <td><i class="green checkmark icon"></i></td>
+                    <td><i class="green checkmark icon"></i></td>
+                    <td><i class="green checkmark icon"></i></td>
+                    <td><i class="green checkmark icon"></i></td>
+                    <td><i class="green checkmark icon"></i></td>
+                    <td>–</td>
+                </tr>
+            </table>
+
+            <br/>
+            <h4>Addresse et numeros de téléphone</h4>
+            6, avenue Victor Hugo<br/>
+            34340 Marseillan<br/>
+            Tél. 04 67 77 22 04<br/>
+            Fax. 04 67 77 62 27<br/>
+            wb-restauration@orange.fr<br/>
+        </div>
+    </div>
+{% endblock %}

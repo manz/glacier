@@ -1,0 +1,39 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/semantic.min.css"/>
+    <style type="text/css">
+        html {
+            font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
+        }
+
+        td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="ui page grid ">
+    <div class="ui center aligned">
+        <div class="row">
+            <div class="column">
+                <div class="image">
+                    <img src="/static/glacier/bandeau.png"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="ui fluid menu">
+        <a class="{% if current == 'home' %}active{% endif %} item" href="/">Accueil</a>
+        <a class="{% if current == 'menus' %}active{% endif %} item" href ="/menus/">Menus & Carte</a>
+        <a class="{% if current == 'news' %}active{% endif %} item" href="/actualites/">Actualités</a>
+        <a class="{% if current == 'contact' %}active{% endif %} item" href="/contact/">Contact</a>
+    </div>
+    <div class="stripe">
+        {% block content %}
+        {% endblock %}
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="/static/javascript/semantic.min.js"></script>
+</body>
+</html>
