@@ -3,7 +3,10 @@ from restaurant.models import News
 
 
 def home(request):
-    actu = News.objects.all().order_by('-posted')[0]
+    try:
+        actu = News.objects.all().order_by('-posted')[0]
+    except IndexError:
+        actu = None
     return render_to_response('home.html', {'current': 'home', 'actu': actu})
 
 
@@ -14,6 +17,7 @@ def contact(request):
 def news(request):
     news = News.objects.all().order_by('posted')
     return render_to_response('news.html', {'current': 'news', 'news': news})
+
 
 def menus(request):
     return render_to_response('menus.html', {'current': 'menus'})

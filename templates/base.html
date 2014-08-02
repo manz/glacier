@@ -1,6 +1,7 @@
+{% load static %}
 <html>
 <head>
-    <link rel="stylesheet" href="/static/css/semantic.min.css"/>
+    <link rel="stylesheet" href="{% static 'css/semantic.min.css' %}"/>
     <style type="text/css">
         html {
             font-family: Helvetica, Arial, Verdana, Tahoma, sans-serif;
@@ -13,11 +14,11 @@
 </head>
 <body>
 <div class="ui page grid ">
-    <div class="ui center aligned">
+    <div class="ui center aligned grid">
         <div class="row">
             <div class="column">
                 <div class="image">
-                    <img src="/static/glacier/bandeau.png"/>
+                    <img src="{% static 'glacier/bandeau.png' %}"/>
                 </div>
             </div>
         </div>
@@ -34,6 +35,6 @@
     </div>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script type="text/javascript" src="/static/javascript/semantic.min.js"></script>
+<script type="text/javascript" src="{% static 'javascript/semantic.min.js' %}"></script>
 </body>
 </html>
