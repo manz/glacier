@@ -2,8 +2,8 @@
 {% block content %}
     <div class="ui page grid">
         <div class="column">
-            {% for actu in news %}
-                {% include 'actu.html' with actu=actu %}
+            {% for event in events %}
+                {% include 'event.html' with event=event %}
                 <hr/>
             {% endfor %}
         </div>

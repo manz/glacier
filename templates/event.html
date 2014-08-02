@@ -1,0 +1,7 @@
+<div>
+    <h3>{{ event.posted }}&nbsp;:</h3>
+    <h4>{{ event.title }}</h4>
+    {% autoescape off %}
+        {{ event.content }}
+    {% endautoescape %}
+</div>

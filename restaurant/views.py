@@ -1,13 +1,13 @@
 from django.shortcuts import render_to_response
-from restaurant.models import News
+from restaurant.models import Event
 
 
 def home(request):
     try:
-        actu = News.objects.all().order_by('-posted')[0]
+        event = Event.objects.all().order_by('-posted')[0]
     except IndexError:
-        actu = None
-    return render_to_response('home.html', {'current': 'home', 'actu': actu})
+        event = None
+    return render_to_response('home.html', {'current': 'home', 'event': event})
 
 
 def contact(request):
@@ -15,8 +15,8 @@ def contact(request):
 
 
 def news(request):
-    news = News.objects.all().order_by('posted')
-    return render_to_response('news.html', {'current': 'news', 'news': news})
+    events = Event.objects.all().order_by('posted')
+    return render_to_response('news.html', {'current': 'news', 'event': events})
 
 
 def menus(request):

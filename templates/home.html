@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-    <div class="ui {% if actu %}stackable two column{% else %}page{% endif %} grid">
+    <div class="ui {% if event %}stackable two column{% else %}page{% endif %} grid">
         <div class="column">
             Le restaurant Le Glacier vous accueille dans une ambiance chaleureuse et épurée et met à
             votre disposition les spécialités méditerranéennes, les coquillages, les poissions et les crustacés.<br/>
             <br/>
             Rejoignez-nous afin de célébrer ensemble les plaisirs de la table ! <br/>
 
-            <img src="{% static 'glacier/visuel2.jpg' %}"/>
+            <img style="width:100%" src="{% static 'glacier/poissons.jpg' %}"/>
 
             <br/>
             Retrouvez nous sur facebook<br/>
             <a style="text-decoration: none;" href="https://www.facebook.com/leglaciermarseillan?fref=ts"><i
                     class="blue inverted large facebook circular icon"></i></a>
         </div>
-        {% if actu %}
+        {% if event %}
             <div class="column">
-                {% include 'actu.html' with actu=actu %}
+                {% include 'event.html' with event=event %}
             </div>
         {% endif %}
     </div>

@@ -1,9 +1,9 @@
 from django.contrib import admin
-from models import News
+from models import Event
 
 
-class NewsAdmin(admin.ModelAdmin):
+class EventAdmin(admin.ModelAdmin):
     pass
 
 
-admin.site.register(News, NewsAdmin)
+admin.site.register(Event, EventAdmin)
