@@ -1,0 +1,7 @@
+<div>
+    <h3>{{ actu.posted }}&nbsp;:</h3>
+    <h4>{{ actu.title }}</h4>
+    {% autoescape off %}
+        {{ actu.content }}
+    {% endautoescape %}
+</div>

@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block content %}
-    <div class="ui page grid">
+    <div class="ui stackable two column grid">
         <div class="column">
             <img src="/static/glacier/visuel1.jpg"/>
             <br/>
@@ -8,6 +8,9 @@
             votre disposition les spécialités méditerranéennes, les coquillages, les poissions et les crustacés.<br/>
             <br/>
             Rejoignez-nous afin de célébrer ensemble les plaisirs de la table !
+        </div>
+        <div class="column">
+            {% include 'actu.html' with actu=actu %}
         </div>
     </div>
 {% endblock %}

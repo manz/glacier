@@ -3,12 +3,7 @@
     <div class="ui page grid">
         <div class="column">
             {% for actu in news %}
-                <div>
-                    <h3>{{ actu.posted }}&nbsp;:</h3>
-
-                    <h4>{{ actu.title }}</h4>
-                    {{ actu.content }}
-                </div>
+                {% include 'actu.html' with actu=actu %}
                 <hr/>
             {% endfor %}
         </div>
