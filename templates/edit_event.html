@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="ui page grid">
+        <div class="column">
+            <form action="{{ request.path }}" method="post">
+                {% csrf_token %}
+                <div class="ui form">
+                  <div class="field">
+                    <label>Titre</label>
+                    <input name="title" type="text" value="{{ event_form.title.value }}">
+                  </div>
+                </div>
+                <div class="ui form">
+                  <div class="field">
+                    <label>Contenu</label>
+                    <textarea name="content">{{ event_form.content.value }}</textarea>
+                  </div>
+                </div>
+
+                {{event_form.content.error}}
+
+                <table>
+                    {{ event_form }}
+                </table>
+                <input type="submit" value="Enregistrer"/>
+            </form>
+        </div>
+    </div>
+{% endblock %}
