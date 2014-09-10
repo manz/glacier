@@ -11,14 +11,11 @@
             <img style="width:100%" src="{% static 'glacier/poissons.jpg' %}"/>
 
             <br/>
-            Retrouvez nous sur facebook<br/>
-            <a style="text-decoration: none;" href="https://www.facebook.com/leglaciermarseillan?fref=ts"><i
-                    class="blue inverted large facebook circular icon"></i></a>
+
         </div>
-        {% if event %}
-            <div class="column">
-                {% include 'event.html' with event=event %}
-            </div>
-        {% endif %}
+        <div class="column">
+            <img class="image" src="/static/logos/tous_au_restaurant.jpg"/>
+        </div>
+        {% include 'logos.html' %}
     </div>
 {% endblock %}

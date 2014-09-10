@@ -27,6 +27,10 @@ def menus(request):
     return render_to_response('menus.html', {'current': 'menus'})
 
 
+def services(request):
+    return render_to_response('services.html', {'current': 'services'})
+
+
 @login_required
 @require_http_methods(['GET', 'POST'])
 def edit_event(request, event_id=None):

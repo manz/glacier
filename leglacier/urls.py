@@ -12,6 +12,7 @@ urlpatterns = patterns(
     url(r'^contact/$', 'restaurant.views.contact', name='contact'),
     url(r'^actualites/$', 'restaurant.views.news', name='news'),
     url(r'^menus/$', 'restaurant.views.menus', name='menus'),
+    # url(r'^prestations/$', 'restaurant.views.services', name='services'),
     url(r'^events/(?P<event_id>\d+)?$', 'restaurant.views.edit_event', name="edit_event"),
 
     url(r'^admin/', include(admin.site.urls)),
